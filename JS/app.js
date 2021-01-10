@@ -24,13 +24,11 @@ Seattle.Sales=SalesPerHour;
 //return [SalesPerHour];
 }
 };
-
-
 Seattle.SalePeHo();
 seatlelist();
 
 function seatlelist(){
-    
+    var 
     var ULlist= document.getElementById("UL");
     var hours=6;
 for(x=0;x<14;x++){
