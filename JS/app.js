@@ -1,4 +1,4 @@
-
+'use strict'
 document.getElementById("seatlefun").addEventListener("mousedown", seattlerun);
 document.getElementById("seatlefun").addEventListener("mouseup", RemoveSea);
 document.getElementById("Tokyo").addEventListener("mousedown", TokyoRun);
