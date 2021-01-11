@@ -1,4 +1,4 @@
-
+'use strict'
 document.getElementById("seatlefun").addEventListener("mousedown", seattlerun);
 document.getElementById("seatlefun").addEventListener("mouseup", RemoveSea);
 document.getElementById("Tokyo").addEventListener("mousedown", TokyoRun);
@@ -24,7 +24,7 @@ function seattlerun(){
     
     SalePeHo:function () {
         var SalesPerHour=[];
-    for(x=0;x<14;x++){
+    for(var x=0;x<14;x++){
     SalesPerHour.push(Math.floor(Seattle.randomCusNum()*Seattle.avgCs));
     
     }
@@ -38,7 +38,7 @@ Seattle.SalePeHo();
         var Total=0;
         var ULlist= document.getElementById("UL");
         var hours=6;
-    for(x=0;x<14;x++){
+    for(var x=0;x<14;x++){
      var list=document.createElement("li");
     list.className="seattle"
     var displayhour;
@@ -57,7 +57,7 @@ Seattle.SalePeHo();
     ULlist.appendChild(list);
     hours++;
     }
-    for(x=0;x<Seattle.Sales.length;x++){
+    for(var x=0;x<Seattle.Sales.length;x++){
     
         Total=Total+Seattle.Sales[x];  
     }
@@ -122,7 +122,7 @@ function TokyoRun(){
     
     SalePeHo:function () {
         var SalesPerHour=[];
-    for(x=0;x<14;x++){
+    for(var x=0;x<14;x++){
     SalesPerHour.push(Math.floor(this.randomCusNum()*this.avgCs));
     
     }
@@ -138,7 +138,7 @@ function tokyolist(){
       var Total=0;  
     var ULlist= document.getElementById("TokyoUL");
     var hours=6;
-for(x=0;x<14;x++){
+for(var x=0;x<14;x++){
  var list=document.createElement("li");
 list.className="tokyo"
 var displayhour;
@@ -157,7 +157,7 @@ list.textContent=displayhour+" "+PMorAM+":  "+Tokyo.Sales[x]+" coockies";
 ULlist.appendChild(list);
 hours++;
 }
-for(x=0;x<Tokyo.Sales.length;x++){
+for(var x=0;x<Tokyo.Sales.length;x++){
     
     Total=Total+Tokyo.Sales[x];  
 }
@@ -182,7 +182,7 @@ function dubaiRun(){
     
     SalePeHo:function () {
         var SalesPerHour=[];
-    for(x=0;x<14;x++){
+    for(var x=0;x<14;x++){
     SalesPerHour.push(Math.floor(this.randomCusNum()*this.avgCs));
     
     }
@@ -199,7 +199,7 @@ function dubaiolist(){
     var ULlist= document.getElementById("dubaiUL");
     var hours=6;
     var Total=0;
-for(x=0;x<14;x++){
+for(var x=0;x<14;x++){
     
  var list=document.createElement("li");
 list.className="dubai"
@@ -219,7 +219,7 @@ list.textContent=displayhour+" "+PMorAM+":  "+Dubai.Sales[x]+" coockies ";
 ULlist.appendChild(list);
 hours++;
 }
-for(x=0;x<Dubai.Sales.length;x++){
+for(var x=0;x<Dubai.Sales.length;x++){
     
     Total=Total+Dubai.Sales[x];  
 }
@@ -243,7 +243,7 @@ function parisRun(){
     
     SalePeHo:function () {
         var SalesPerHour=[];
-    for(x=0;x<14;x++){
+    for(var x=0;x<14;x++){
     SalesPerHour.push(Math.floor(this.randomCusNum()*this.avgCs));
     
     }
@@ -260,7 +260,7 @@ function Parislist(){
     var ULlist= document.getElementById("parisUL");
     var hours=6;
     var Total=0;
-for(x=0;x<14;x++){
+for(var x=0;x<14;x++){
     
  var list=document.createElement("li");
 list.className="paris"
@@ -280,7 +280,7 @@ list.textContent=displayhour+" "+PMorAM+":  "+Paris.Sales[x]+" coockies ";
 ULlist.appendChild(list);
 hours++;
 }
-for(x=0;x<Paris.Sales.length;x++){
+for(var x=0;x<Paris.Sales.length;x++){
     
     Total=Total+Paris.Sales[x];  
 }
@@ -304,7 +304,7 @@ function limaRun(){
     
     SalePeHo:function () {
         var SalesPerHour=[];
-    for(x=0;x<14;x++){
+    for(var x=0;x<14;x++){
     SalesPerHour.push(Math.floor(this.randomCusNum()*this.avgCs));
     
     }
@@ -321,7 +321,7 @@ function Limalist(){
     var ULlist= document.getElementById("limaUL");
     var hours=6;
     var Total=0;
-for(x=0;x<14;x++){
+for(var x=0;x<14;x++){
     
  var list=document.createElement("li");
 list.className="paris"
@@ -341,7 +341,7 @@ list.textContent=displayhour+" "+PMorAM+":  "+Lima.Sales[x]+" coockies ";
 ULlist.appendChild(list);
 hours++;
 }
-for(x=0;x<Lima.Sales.length;x++){
+for(var x=0;x<Lima.Sales.length;x++){
     
     Total=Total+Lima.Sales[x];  
 }
@@ -350,7 +350,4 @@ ULlist.appendChild(list);
 }
 
 }
-
-
-
 
