@@ -61,6 +61,7 @@ Seattle.SalePeHo();
     
         Total=Total+Seattle.Sales[x];  
     }
+    var list=document.createElement("li");
     list.textContent="Total: "+Total;
     ULlist.appendChild(list);
     }
@@ -161,6 +162,7 @@ for(var x=0;x<Tokyo.Sales.length;x++){
     
     Total=Total+Tokyo.Sales[x];  
 }
+var list=document.createElement("li");
 list.textContent="Total: "+Total;
 ULlist.appendChild(list);
 }
@@ -223,6 +225,7 @@ for(var x=0;x<Dubai.Sales.length;x++){
     
     Total=Total+Dubai.Sales[x];  
 }
+var list=document.createElement("li");
 list.textContent="Total: "+Total;
 ULlist.appendChild(list);
 }
@@ -284,6 +287,7 @@ for(var x=0;x<Paris.Sales.length;x++){
     
     Total=Total+Paris.Sales[x];  
 }
+var list=document.createElement("li");
 list.textContent="Total: "+Total;
 ULlist.appendChild(list);
 }
@@ -345,6 +349,7 @@ for(var x=0;x<Lima.Sales.length;x++){
     
     Total=Total+Lima.Sales[x];  
 }
+var list=document.createElement("li");
 list.textContent="Total: "+Total;
 ULlist.appendChild(list);
 }
