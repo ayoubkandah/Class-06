@@ -69,7 +69,7 @@ return seattle;
             return lima;
                 }
                 function RemoveRender(){
-                    setTimeout(timeo, 4000)
+                    setTimeout(timeo, 8000)
                     
                     // $( "p" ).remove();
                      //$(".seattle").remove();
