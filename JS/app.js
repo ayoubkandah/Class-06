@@ -149,18 +149,26 @@ function TableHorz(){
     var SeattleH=document.createElement("td");
     SeattleH.setAttribute("style","padding-left:20px;border-right:4px inset      rgb(109, 167, 161);border-bottom:4px inset      rgb(109, 167, 161);");
     SeattleH.textContent="Seattle"
-   
+   var totalforeach=0;
     TRS.appendChild(SeattleH);
 
 for(var x=0;x<seattle.Sales.length;x++){
 var seattSalVal=document.createElement("th");
 seattSalVal.textContent=seattle.Sales[x];
+
+ totalforeach += seattle.Sales[x];
 seattSalVal.setAttribute("style","border-right:4px inset      rgb(109, 167, 161);border-bottom:4px inset      rgb(109, 167, 161);");
 TRS.appendChild(seattSalVal);
 
-}
 
+}
+var seattSalVal=document.createElement("th");
+seattSalVal.textContent=totalforeach;
+seattSalVal.setAttribute("style","border-right:4px inset      rgb(109, 167, 161);border-bottom:4px inset      rgb(109, 167, 161);");
+
+TRS.appendChild(seattSalVal);
     //---------------------------------------
+    totalforeach=0;
     var TRT=document.createElement("tr");
     Table.appendChild(TRT);
     TRT.id="trt"
@@ -169,15 +177,20 @@ TRS.appendChild(seattSalVal);
     TokyoH.setAttribute("style","padding-left:20px;border-right:4px inset      rgb(109, 167, 161);border-bottom:4px inset      rgb(109, 167, 161);");
     TRT.appendChild(TokyoH);
     for(var x=0;x<tokyo.Sales.length;x++){
+        totalforeach += tokyo.Sales[x];
         var tokyotSalVal=document.createElement("th");
         tokyotSalVal.setAttribute("style","border-right:4px inset      rgb(109, 167, 161);border-bottom:4px inset      rgb(109, 167, 161);");
         tokyotSalVal.textContent=tokyo.Sales[x];
         TRT.appendChild(tokyotSalVal);
         
         }
+        var tokyotSalVal=document.createElement("th");
+        tokyotSalVal.textContent=totalforeach;
+        tokyotSalVal.setAttribute("style","border-right:4px inset      rgb(109, 167, 161);border-bottom:4px inset      rgb(109, 167, 161);");
 
+        TRT.appendChild(tokyotSalVal);
 //------------------------------------------
-
+totalforeach=0;
 var TRD=document.createElement("tr");
     Table.appendChild(TRD);
     TRD.id="trd"
@@ -188,15 +201,20 @@ var TRD=document.createElement("tr");
     DubatiH.setAttribute("style","padding-left:20px;border-right:4px inset      rgb(109, 167, 161);border-bottom:4px inset      rgb(109, 167, 161);");
     TRD.appendChild(DubatiH);
     for(var x=0;x<dubai.Sales.length;x++){
+        totalforeach += dubai.Sales[x];
         var dubaiSalVal=document.createElement("th");
         dubaiSalVal.setAttribute("style","border-right:4px inset      rgb(109, 167, 161);border-bottom:4px inset      rgb(109, 167, 161);");
         dubaiSalVal.textContent=dubai.Sales[x];
         TRD.appendChild(dubaiSalVal);
         
         }
+        var dubaiSalVal=document.createElement("th");
+        dubaiSalVal.textContent=totalforeach;
+        dubaiSalVal.setAttribute("style","border-right:4px inset      rgb(109, 167, 161);border-bottom:4px inset      rgb(109, 167, 161);");
 
+        TRD.appendChild(dubaiSalVal);
 //-------------------------------------------
-
+totalforeach=0;
 var TRP=document.createElement("tr");
     Table.appendChild(TRP);
     TRP.id="trp"
@@ -205,15 +223,20 @@ var TRP=document.createElement("tr");
     ParisH.setAttribute("style","padding-left:20px;border-right:4px inset      rgb(109, 167, 161);border-bottom:4px inset      rgb(109, 167, 161);");
     TRP.appendChild(ParisH);
     for(var x=0;x<paris.Sales.length;x++){
+        totalforeach += paris.Sales[x];
         var parisSalVal=document.createElement("th");
         parisSalVal.setAttribute("style","border-right:4px inset      rgb(109, 167, 161);border-bottom:4px inset      rgb(109, 167, 161);");
         parisSalVal.textContent=paris.Sales[x];
         TRP.appendChild(parisSalVal);
         
         }
+        var parisSalVal=document.createElement("th");
+        parisSalVal.textContent=totalforeach;
+        parisSalVal.setAttribute("style","border-right:4px inset      rgb(109, 167, 161);border-bottom:4px inset      rgb(109, 167, 161);");
 
+        TRP.appendChild(parisSalVal);
 //-------------------------------------------
-
+totalforeach=0;
 
 var TRL=document.createElement("tr");
     Table.appendChild(TRL);
@@ -223,12 +246,18 @@ var TRL=document.createElement("tr");
     LimaH.setAttribute("style","padding-left:20px;border-right:4px inset      rgb(109, 167, 161);border-bottom:4px inset      rgb(109, 167, 161);");
     TRL.appendChild(LimaH);
     for(var x=0;x<lima.Sales.length;x++){
+        totalforeach += lima.Sales[x];
         var limaSalVal=document.createElement("th");
         limaSalVal.setAttribute("style","border-right:4px inset      rgb(109, 167, 161);border-bottom:4px inset      rgb(109, 167, 161);");
         limaSalVal.textContent=lima.Sales[x];
         TRL.appendChild(limaSalVal);
         
         }
+        var limaSalVal=document.createElement("th");
+        limaSalVal.textContent=totalforeach;
+        limaSalVal.setAttribute("style","border-right:4px inset      rgb(109, 167, 161);border-bottom:4px inset      rgb(109, 167, 161);");
+
+        TRL.appendChild(limaSalVal);
 //-------------------------------------------
 var totally=0;
 var TRT=document.createElement("tr");
