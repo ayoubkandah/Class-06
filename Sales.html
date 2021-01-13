@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   
+
 
  <style>
      *{cursor:url(https://2.bp.blogspot.com/-75RQYsSC3Nk/WDl7ImSBS0I/AAAAAAAAAB4/9DbYhWX_dlE1BwRuN3VX4aPNFCxel98FwCLcB/s1600/rubycursor.png), progress;}
@@ -82,6 +82,25 @@ text-align: center;
     padding: 5px;
     border-style : groove ;
 }
+ 
+ 
+input {
+    
+    display: block;
+  width: 50%;
+  padding:  15px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid rgb(22, 104, 90);
+  border-radius: 4px;
+  
+}
+
+label{
+    display: block;
+    font-weight: bold;
+ 
+}
 
  </style>
     <meta charset="UTF-8">
@@ -91,6 +110,7 @@ text-align: center;
 
 <body >
     <header>
+
 <nav >
     <ul >
         <li class="NAV" ><span><a Style="text-decoration: none; color:white" href="index.html">Home</a></span></li>
@@ -101,6 +121,28 @@ text-align: center;
 <h1  style=" font-size: 250%; background-image:url(https://webnotes.cz/wp-content/uploads/2019/04/PR-%C4%8Dl%C3%A1nky-banner-na-web-Press-Media.gif); opacity: 0.4 ;width: 100%; background-size: cover; text-align: center;background-position: center; padding-top: 15px;padding-bottom: 15px;border-style: double;text-shadow: 7px 1px 3px #ff0000;; "> Cookies </h1>
     </header>
    <main>
+
+    
+        <form id="formID">  
+            <fieldset>
+         <label for="nameField">City Name</label>
+         <input type="text" name="nameField" id="nameField">
+<br  />
+         <label for="minField">Min Customer</label>
+         <input type="number" name="minField" id="minField">
+         <br  />
+         <label for="maxField">Max Customer</label>
+         <input type="number" name="maxField" id="maxField">
+         <br  />
+         <label for="avgField">AVG Cookies Per Hour</label>
+         <input type="number" name="avgField" id="avgField">
+
+         <input value="submitF" id="submitF" style="margin-top: 20px;    width: 20%;" type="submit"></input>
+        </fieldset>
+
+        </form>
+
+    
     <h2 id="seatlefun" style="border-style: solid; padding: 2px;">Seattle</h2>
     <ul id="UL"></ul>
 
@@ -128,7 +170,7 @@ text-align: center;
 </table>
 
 </section>
-
+<script src="JS/app.js"></script>
    </main>
   <footer>
 
@@ -137,7 +179,7 @@ text-align: center;
 
    </p>
   </footer> 
-  <script src="JS/app.js"></script>
+
   
 </body>
 </html>
