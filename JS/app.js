@@ -13,7 +13,12 @@ document.getElementById("custTable").addEventListener("mousedown", Render);
 document.getElementById("custTable").addEventListener("mouseup", RemoveRender);
 var triggernum = true;
 var trigeruser=false;
-
+var seattlestore=[];
+var tokyostore=[];
+var parisstore=[];
+var limastore=[];
+var dubaistore=[];
+var users=[0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 var nameUs = document.getElementById("nameField");
 var minUs = document.getAnimations("minField");
 var maxUs = document.getElementById("maxField");
@@ -79,6 +84,22 @@ function SetLimaValu() {
     lima.SalePeHo();
     return lima;
 }
+function RemoveButton() {
+    //setTimeout(timeo, 8000)
+
+    // $( "p" ).remove();
+    //$(".seattle").remove();
+    users=[0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+        var myobj = document.getElementById("Table")
+        while (myobj.lastChild) {
+            triggernum = true;
+            myobj.removeChild(myobj.lastChild);
+        
+    }
+
+
+
+}
 function RemoveRender() {
     setTimeout(timeo, 8000)
 
@@ -95,7 +116,6 @@ function RemoveRender() {
 
 
 }
-
 
 function Render() {
 
@@ -666,24 +686,25 @@ function submitRun(event) {
 
     var userinfo = SetUserValu()
 
-
+    
+   
 
     Render();
     function Render() {
 
-        
-        if (triggernum) {
-
+ 
             var seattle = SetSeattleValu();
             var dubai = SetDubaiValu();
             var tokyo = SetTokyoValu();
             var paris = SetParisValu();
             var lima = SetLimaValu();
-
+            var Table = document.getElementById("Table")
 
             TableVer();
             TableHorz();
+            trigger();
             function TableVer() {
+if(triggernum){
                 var Total = 0;
                 var Table = document.getElementById("Table");
                 var TR = document.createElement("tr");
@@ -725,35 +746,12 @@ function submitRun(event) {
                 TotalText.setAttribute("style", "border-bottom:4px inset      rgb(109, 167, 161);")
                 TR.appendChild(TotalText);
             }
+        }
             function TableHorz() {
-                var totalforeach = 0;
-                var Table = document.getElementById("Table")
-                var TRU = document.createElement("tr");
-                Table.appendChild(TRU);
-                TRU.id = "tru"
-                var cityU = document.createElement("td");
-                cityU.setAttribute("style", "padding-left:20px;border-right:4px inset      rgb(109, 167, 161);border-bottom:4px inset      rgb(109, 167, 161);");
-                cityU.textContent = name
-
-                TRU.appendChild(cityU);
-
-                for (var x = 0; x < userinfo.Sales.length; x++) {
-                    var userVal = document.createElement("th");
-                    userVal.textContent = userinfo.Sales[x];
-
-                    totalforeach += userinfo.Sales[x];
-                    userVal.setAttribute("style", "border-right:4px inset      rgb(109, 167, 161);border-bottom:4px inset      rgb(109, 167, 161);");
-                    TRU.appendChild(userVal);
-
-
-                }
-                var userVal = document.createElement("th");
-                userVal.textContent = totalforeach;
-                userVal.setAttribute("style", "border-right:4px inset      rgb(109, 167, 161);border-bottom:4px inset      rgb(109, 167, 161);");
-
-                TRU.appendChild(userVal);
-                //---------------------------------------
+            
+                if(triggernum){
                 //-----------------------------------------
+               
                 var TRS = document.createElement("tr");
                 Table.appendChild(TRS);
                 TRS.id = "trs"
@@ -766,13 +764,15 @@ function submitRun(event) {
                 for (var x = 0; x < seattle.Sales.length; x++) {
                     var seattSalVal = document.createElement("th");
                     seattSalVal.textContent = seattle.Sales[x];
-
+                    seattlestore.push(seattle.Sales[x])
                     totalforeach += seattle.Sales[x];
+
                     seattSalVal.setAttribute("style", "border-right:4px inset      rgb(109, 167, 161);border-bottom:4px inset      rgb(109, 167, 161);");
                     TRS.appendChild(seattSalVal);
-
+                    
 
                 }
+              
                 var seattSalVal = document.createElement("th");
                 seattSalVal.textContent = totalforeach;
                 seattSalVal.setAttribute("style", "border-right:4px inset      rgb(109, 167, 161);border-bottom:4px inset      rgb(109, 167, 161);");
@@ -789,6 +789,7 @@ function submitRun(event) {
                 TRT.appendChild(TokyoH);
                 for (var x = 0; x < tokyo.Sales.length; x++) {
                     totalforeach += tokyo.Sales[x];
+              tokyostore.push(tokyo.Sales[x])
                     var tokyotSalVal = document.createElement("th");
                     tokyotSalVal.setAttribute("style", "border-right:4px inset      rgb(109, 167, 161);border-bottom:4px inset      rgb(109, 167, 161);");
                     tokyotSalVal.textContent = tokyo.Sales[x];
@@ -813,6 +814,7 @@ function submitRun(event) {
                 TRD.appendChild(DubatiH);
                 for (var x = 0; x < dubai.Sales.length; x++) {
                     totalforeach += dubai.Sales[x];
+            dubaistore.push(dubai.Sales[x])
                     var dubaiSalVal = document.createElement("th");
                     dubaiSalVal.setAttribute("style", "border-right:4px inset      rgb(109, 167, 161);border-bottom:4px inset      rgb(109, 167, 161);");
                     dubaiSalVal.textContent = dubai.Sales[x];
@@ -835,6 +837,7 @@ function submitRun(event) {
                 TRP.appendChild(ParisH);
                 for (var x = 0; x < paris.Sales.length; x++) {
                     totalforeach += paris.Sales[x];
+         parisstore.push(paris.Sales[x])
                     var parisSalVal = document.createElement("th");
                     parisSalVal.setAttribute("style", "border-right:4px inset      rgb(109, 167, 161);border-bottom:4px inset      rgb(109, 167, 161);");
                     parisSalVal.textContent = paris.Sales[x];
@@ -858,6 +861,7 @@ function submitRun(event) {
                 TRL.appendChild(LimaH);
                 for (var x = 0; x < lima.Sales.length; x++) {
                     totalforeach += lima.Sales[x];
+          limastore.push(lima.Sales[x])
                     var limaSalVal = document.createElement("th");
                     limaSalVal.setAttribute("style", "border-right:4px inset      rgb(109, 167, 161);border-bottom:4px inset      rgb(109, 167, 161);");
                     limaSalVal.textContent = lima.Sales[x];
@@ -869,33 +873,131 @@ function submitRun(event) {
                 limaSalVal.setAttribute("style", "border-right:4px inset      rgb(109, 167, 161);border-bottom:4px inset      rgb(109, 167, 161);");
 
                 TRL.appendChild(limaSalVal);
-                //-------------------------------------------
-                var totally = 0;
-                var TRT = document.createElement("tr");
-                Table.appendChild(TRT);
-                TRT.id = "trT"
-                var TotalH = document.createElement("td");
-                TotalH.textContent = "Totals"
-                TotalH.setAttribute("style", "padding-left:20px;border-right:4px inset  rgb(109, 167, 161);");
-                TRT.appendChild(TotalH);
-                for (var x = 0; x < lima.Sales.length; x++) {
-                    var Totalcell = document.createElement("th");
-                    var sum = lima.Sales[x] + paris.Sales[x] + seattle.Sales[x] + dubai.Sales[x] + tokyo.Sales[x] + userinfo.Sales[x];
-                    totally += sum;
-                    Totalcell.textContent = sum;
-                    Totalcell.setAttribute("style", "border-right:4px inset  rgb(109, 167, 161);");
-                    TRT.appendChild(Totalcell)
+         
+              }
+
+
+              var totalforeach = 0;
+           
+              var TRU = document.createElement("tr");
+              Table.appendChild(TRU);
+              TRU.id = "tru"
+              var cityU = document.createElement("td");
+              cityU.setAttribute("style", "padding-left:20px;border-right:4px inset      rgb(109, 167, 161);border-bottom:4px inset      rgb(109, 167, 161);");
+              cityU.textContent = name
+
+              TRU.appendChild(cityU);
+
+              for (var x = 0; x < userinfo.Sales.length; x++) {
+                  var userVal = document.createElement("th");
+                  userVal.textContent = userinfo.Sales[x];
+                    users[x]+=userinfo.Sales[x]
+                  totalforeach += userinfo.Sales[x];
+                  userVal.setAttribute("style", "border-right:4px inset      rgb(109, 167, 161);border-bottom:4px inset      rgb(109, 167, 161);");
+                  TRU.appendChild(userVal);
+
+
+              }
+              var userVal = document.createElement("th");
+              userVal.textContent = totalforeach;
+              userVal.setAttribute("style", "border-right:4px inset      rgb(109, 167, 161);border-bottom:4px inset      rgb(109, 167, 161);");
+
+              TRU.appendChild(userVal);
+
+              console.log(users)
+              //---------------------------------------
+
+              //-------------------------------------------
+           
+              if (!triggernum){
+                  var obj=document.getElementById("total")
+                  obj.remove();
+           
+                  
                 }
-                var Totallycell = document.createElement("th");
-                Totallycell.textContent = totally;
-                Totallycell.setAttribute("style", "border-top:4px inset      rgb(109, 167, 161);")
-                TRT.appendChild(Totallycell)
-                triggernum = false;
-                //-------------------------------------------
-            }
+              
+              var totally = 0;
+  
+              var TRT = document.createElement("tr");
+              Table.appendChild(TRT);
+              var TotalH = document.createElement("td");
+              TotalH.id="totaltd"
+              TotalH.textContent = "Totals"
+              TotalH.setAttribute("style", "padding-left:20px;border-right:4px inset  rgb(109, 167, 161);");
+              TRT.id = "total"
+              TRT.appendChild(TotalH);
+             
+             
+
+              
+              
+        
+              for (var x = 0; x < userinfo.Sales.length; x++) {
+                  var Totalcell = document.createElement("th");
+                  var sum = limastore[x] + parisstore[x] + seattlestore[x] + dubaistore[x] + tokyostore[x] + users[x];
+           
+                  totally += sum;
+                  Totalcell.textContent = sum;
+                  Totalcell.setAttribute("style", "border-right:4px inset  rgb(109, 167, 161);");
+                  TRT.appendChild(Totalcell)
+              
+              
+              }
+              var Totallycell = document.createElement("th");
+              Totallycell.textContent = totally;
+              Totallycell.setAttribute("style", "border-top:4px inset      rgb(109, 167, 161);")
+              TRT.appendChild(Totallycell)
+                        triggernum=false;
+              //-------------------------------------------
+           
+            //       var totally = 0;
+          
+            //           var TRT = document.createElement("tr");
+            //           Table.appendChild(TRT);
+            //           var TotalH = document.createElement("td");
+            //           TotalH.textContent = "Totals"
+            //           TotalH.setAttribute("style", "padding-left:20px;border-right:4px inset  rgb(109, 167, 161);");
+            //           TRT.id = "trT"
+            //           TRT.appendChild(TotalH);
+      
+                
+            //           for (var x = 0; x < userinfo.Sales.length; x++) {
+            //               var Totalcell = document.createElement("th");
+            //               var sum = seattle.Sales[x] + paris.Sales[x] + lima.Sales[x] + dubaistore[x] + tokyo.Sales[x] + userinfo.Sales[x];
+            //               totally += sum;
+            //               Totalcell.textContent = sum;
+            //               Totalcell.setAttribute("style", "border-right:4px inset  rgb(109, 167, 161);");
+            //               TRT.appendChild(Totalcell)
+                      
+                      
+            //           }
+            //           var Totallycell = document.createElement("th");
+            //           Totallycell.textContent = totally;
+            //           Totallycell.setAttribute("style", "border-top:4px inset      rgb(109, 167, 161);")
+            //           TRT.appendChild(Totallycell)
+            //   }
+  
+
+          
+//----------------------------------------------
+               
+           
+
+
+
+
+}
+
+function trigger(){
+    triggernum = false;
+}
+        
+} 
+       
+  
         }
-    }
+    
+        
 
 
   
-}

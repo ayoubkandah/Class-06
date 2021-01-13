@@ -67,14 +67,19 @@ background-position: center ;; height: 100%;
 color: rgb(45, 2, 95);
 text-align: center;
 }
-/*.button:hover{
-    /* background-color: rgb(255, 196, 0) !important; 
+
+#submitF:hover{
+    background-color: rgb(255, 196, 0) !important; 
     color: white !important;
     background-image: url(https://i.stack.imgur.com/poux8.gif);
    
     
 }
-*/
+
+.removebut:hover{
+    background-color: rgb(182, 12, 12) !important;
+  
+}
 .NAV{
     display: inline;
     text-decoration: none !important;
@@ -164,11 +169,12 @@ label{
 <h2 id="custTable" style="border-style: solid; padding: 2px;">Table</h2>
 <section>
 
-<table  style="font-size: 120%;background-color: rgba(69, 99, 95, 0.7);width: 100%;border-collapse: collapse !important;border: 2px groove rgb(100, 143, 139);border-radius: 5px;" id="Table">
+<table  style="margin-bottom: 15px; font-size: 120%;background-color: rgba(69, 99, 95, 0.7);width: 100%;border-collapse: collapse !important;border: 2px groove rgb(100, 143, 139);border-radius: 5px;" id="Table">
 
 
 </table>
 
+<button class="removebut"  type="button" style="width :20%;padding-top: 6px ;padding-bottom: 6px;" onclick="RemoveButton()" >Remove Table</button>
 </section>
 <script src="JS/app.js"></script>
    </main>
